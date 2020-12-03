@@ -2,7 +2,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const fortuneCookie = require('fortune-cookie');
-const cors = require('cors');
 
 
 
@@ -16,9 +15,8 @@ const randNum = () => Math.round(Math.random()*fortuneCookie.length)
 const app = express() 
 //use morgan to log all requests. combined format 
 app.use(morgan('combined'))
-app.use(cors());
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public/frontend'))
 
 //resource 
 
